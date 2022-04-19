@@ -1,0 +1,35 @@
+---
+
+stack_name: Tableau-Server
+state: present
+region: us-east-1
+disable_rollback: true
+template_url: https://aws-quickstart.s3.amazonaws.com/quickstart-tableau-server/templates/tableau-single-server.template
+template_params: {
+                  'KeyPairName': 'aws_lab',
+                  'VPCID': 'vpc-0faf1b2b5ec0e9b04',
+                  'PublicSubnetID': 'subnet-01cd1e4d9c6332eb5',
+                  'SourceCIDR': '0.0.0.0/0',
+                  'AMIOS': 'CentOS-7-HVM',
+                  'Username': 'DVA',
+                  'Password': 'cse6242',
+                  'TableauServerAdminUser': 'DVA',
+                  'TableauServerAdminPassword': 'cse6242',
+                  'AcceptEULA': 'yes',
+                  'TableauServerLicenseKey': '',
+                  'RegFirstName': 'Ramzi',
+                  'RegLastName': 'Husein',
+                  'RegEmail': 'ramzi.ala.husein@gmail.com',
+                  'RegCompany': 'GATech',
+                  'RegTitle': 'Student',
+                  'RegDepartment': 'Analytics',
+                  'RegIndustry': 'Engineering',
+                  'RegPhone': '9193455469',
+                  'RegCity': 'Raleigh',
+                  'RegState': 'North Carolina',
+                  'RegZip': '27606',
+                  'RegCountry': 'USA'
+                 }
+tags: {
+       'Stack': 'tableau-server'
+       }
