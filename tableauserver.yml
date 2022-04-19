@@ -3,13 +3,6 @@
   hosts: localhost
 
   tasks:
-  - include_vars: vars/tableau.yml
-  - name: Create stack from template URL
-    amazon.aws.cloudformation:
-      stack_name: "{{ stack_name }}"
-      state: "{{ state }}"
-      region: "{{ region }}"
-      disable_rollback: "{{ disable_rollback }}"
-      template_url: "{{ template_url }}"
-      template_parameters: "{{ template_params }}"
-      tags: "{{ tags }}"
+    - name: Create cloudformation stack from role
+      include_role:
+        name: cloudformation
